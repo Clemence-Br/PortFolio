@@ -61,7 +61,7 @@ const skillCategories = ref([
 </script>
 
 <template>
-  <div class="tech-stack-section">
+  <div id="stack" class="tech-stack-section">
     <h2 class="tech-main-title"><span class="number">02.</span> Stack</h2>
     <p class="tech-description">
       Voici les technologies avec lesquelles je travaille au quotidien et/ou que
@@ -131,14 +131,6 @@ const skillCategories = ref([
   align-items: center;
   letter-spacing: -0.01em;
   color: #ffffff;
-}
-
-.number {
-  font-family: var(--font-mono);
-  color: var(--primary-color);
-  margin-right: 0.75rem;
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-weight: 500;
 }
 
 .tech-description {

@@ -22,7 +22,7 @@ import CV from "../assets/CV_Clemence_Boucher.pdf";
         développement.
       </p>
       <div class="cta-group">
-        <a href="#projects" class="cta-button">Découvrir mes projets</a>
+        <a href="#projects" class="cta-button">Voir mes projets</a>
         <a
           :href="CV"
           class="secondary-button"

@@ -54,7 +54,7 @@ const experiences = ref([
 
 <template>
   <section id="experience" class="experience-section">
-    <h2 class="section-title"><span class="number">03.</span> Mon Parcours</h2>
+    <h2 class="section-title"><span class="number">03.</span> Parcours</h2>
     <p class="section-description">
       De mes bases universitaires à mon projet de spécialisation en ingénierie,
       voici la trajectoire de mon évolution professionnelle.
@@ -113,23 +113,6 @@ const experiences = ref([
 .experience-section {
   padding: 6rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.01em;
-}
-
-.number {
-  font-family: var(--font-mono);
-  color: var(--primary-color);
-  margin-right: 0.75rem;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  font-weight: 500;
 }
 
 .section-description {

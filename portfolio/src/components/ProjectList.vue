@@ -9,9 +9,7 @@ defineProps<{
 
 <template>
   <section id="projects" class="projects-section">
-    <div class="section-header">
-      <h2 class="section-title-custom">Projets</h2>
-    </div>
+    <h2 class="section-title"><span class="number">04.</span> Projets</h2>
     <div class="projects-grid">
       <project-card
         v-for="project in projects"
@@ -27,26 +25,11 @@ defineProps<{
   padding: 6rem 0;
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1.25rem;
-  margin-bottom: 3rem;
-}
-
-.section-title-custom {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  margin-top: 2rem;
 }
 
 @media (min-width: 768px) {

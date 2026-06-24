@@ -6,7 +6,9 @@
         Clémence Boucher
       </div>
       <ul class="nav-links">
-        <li><a href="#about" class="nav-link-item">À propos</a></li>
+        <li><a href="#about" class="nav-link-item">Qui suis-je ?</a></li>
+        <li><a href="#stack" class="nav-link-item">Stack</a></li>
+        <li><a href="#experience" class="nav-link-item">Parcours</a></li>
         <li><a href="#projects" class="nav-link-item">Projets</a></li>
       </ul>
     </nav>

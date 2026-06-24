@@ -70,23 +70,6 @@ onUnmounted(() => {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.section-title {
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-  font-weight: 800;
-  margin-bottom: 3.5rem;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.01em;
-}
-
-.number {
-  font-family: var(--font-mono);
-  color: var(--primary-color);
-  margin-right: 0.75rem;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  font-weight: 500;
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
