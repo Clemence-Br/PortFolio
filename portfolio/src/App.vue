@@ -32,7 +32,7 @@ const projects = ref<Project[]>([
       "Prisma",
       "SQLite",
     ],
-    githubUrl: "",
+    githubUrl: "https://github.com/Clemence-Br/StrasEvent",
   },
   {
     id: 2,
