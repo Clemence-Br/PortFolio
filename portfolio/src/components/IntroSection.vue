@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import profileImage from "/CLEMENCE_B.png";
+import CV from "/CV_Clemence_Boucher.pdf";
 </script>
 
 <template>
@@ -18,7 +19,13 @@ import profileImage from "/CLEMENCE_B.png";
       </p>
       <div class="cta-group">
         <a href="#projects" class="cta-button">Découvrir mes projets</a>
-        <a href="#about" class="secondary-button">En savoir plus &rarr;</a>
+        <a
+          :href="CV"
+          class="secondary-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Mon CV &rarr;</a
+        >
       </div>
     </div>
 

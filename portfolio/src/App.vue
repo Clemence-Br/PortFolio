@@ -12,15 +12,15 @@ import Footer from "./components/Footer.vue";
 const projects = ref<Project[]>([
   {
     id: 1,
-    title: "StrasEvent",
+    title: "StrasEvent (BUT3)",
     description:
       "Solution complète de gestion d'événements pour l'Eurométropole de Strasbourg, comprenant une application de bureau et son application mobile compagnon. Projet d'envergure mené en équipe de six, axé sur la synchronisation et l'expérience utilisateur.",
     image: "/projects/strasevent.png",
     technologies: [
       "React",
-      "Leaflet",
-      "JavaScript",
       "React Native",
+      "JavaScript",
+      "Leaflet",
       "Node.js",
       "Express",
       "Prisma",
@@ -30,21 +30,48 @@ const projects = ref<Project[]>([
   },
   {
     id: 2,
-    title: "O'nof",
+    title: "O'nof (BUT2)",
     description:
       "Serious Game présentant les enjeux de la création de formations universitaires sous forme de jeu de cartes.",
     image: "/projects/onof.png",
     technologies: ["React", "JavaScript"],
-    githubUrl: "",
+    githubUrl: "https://github.com/Clemence-Br/O-nof",
   },
   {
     id: 3,
     title: "Applications de Supervision (Freshmile)",
     description:
-      "Applications de supervision pour la gestion des bornes de recharge électriques et de leurs utilisateurs. J'ai nottamment travaillé sur le système tarifaire des solutions.",
+      "Participation au développement d'applications de supervision pour la gestion des bornes de recharge électriques et de leurs utilisateurs. J'ai notamment travaillé sur le système tarifaire des solutions.",
     image: "/projects/supervision.png",
     technologies: ["Vue 2/3", "TypeScript", "Laravel 10"],
     githubUrl: "",
+  },
+  {
+    id: 4,
+    title: "Pookemon (BUT1)",
+    description:
+      "Jeu de cartes inspiré de Pokémon où un joueur humain fait face à l'ordinateur. Le gagnant est celui qui parvient à éliminer tous les Pokémons de son adversaire.",
+    image: "/projects/pookemon.png",
+    technologies: ["Java", "UML"],
+    githubUrl: "https://github.com/Clemence-Br/POOkemon",
+  },
+  {
+    id: 5,
+    title: "Snake (BUT1)",
+    description:
+      "Snake développé en assembleur MIPS32, où le joueur contrôle un serpent qui grandit à chaque fruit mangé. Le jeu se termine si le serpent se mord la queue ou touche les murs.",
+    image: "/projects/snake.png",
+    technologies: ["MIPS32"],
+    githubUrl: "https://github.com/Clemence-Br/Snake",
+  },
+  {
+    id: 6,
+    title: "Labyrinthe (BUT2)",
+    description:
+      "Jeu du labyrinthe en 2d où les joueurs s'affrontent pour récupérer des trésors en se frayant un chemin à travers les tuiles mouvantes.",
+    image: "/projects/labyrinthe.png",
+    technologies: ["Java", "Swing", "UML"],
+    githubUrl: "https://github.com/Clemence-Br/Labyrinthe",
   },
 ]);
 </script>

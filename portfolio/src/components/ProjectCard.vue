@@ -27,26 +27,15 @@ defineProps<{
       <h4 class="card-title">{{ project.title }}</h4>
       <p class="card-description">{{ project.description }}</p>
 
-      <div class="card-links">
-        <a
-          v-if="project.githubUrl"
-          :target="'_blank'"
-          :href="project.githubUrl"
-          rel="noopener"
-          class="project-link"
-        >
-          GitHub <span class="arrow">&nearr;</span>
-        </a>
-        <a
-          v-if="project.productionUrl"
-          :target="'_blank'"
-          :href="project.productionUrl"
-          rel="noopener"
-          class="project-link"
-        >
-          Production <span class="arrow">&nearr;</span>
-        </a>
-      </div>
+      <a
+        v-if="project.githubUrl"
+        :target="'_blank'"
+        :href="project.githubUrl"
+        rel="noopener"
+        class="project-link"
+      >
+        GitHub <span class="arrow">&nearr;</span>
+      </a>
     </div>
   </article>
 </template>
@@ -147,24 +136,14 @@ defineProps<{
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  flex-grow: 1;
 }
 
-.card-links {
-  display: flex;
-  gap: 1.5rem;
+.project-link {
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-top: auto;
-}
-
-.project-link {
   color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
   transition: color 0.2s ease;
 }
 
