@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import profileImage from "/CLEMENCE_B.png";
-import CV from "/CV_Clemence_Boucher.pdf";
+import profileImage from "../assets/CLEMENCE_B.png";
+import CV from "../assets/CV_Clemence_Boucher.pdf";
 </script>
 
 <template>

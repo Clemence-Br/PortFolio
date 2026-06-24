@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import photo1 from "../assets/photos_carousel/photo1.jpg";
+import photo2 from "../assets/photos_carousel/photo2.jpg";
+import photo3 from "../assets/photos_carousel/photo3.jpg";
+import photo4 from "../assets/photos_carousel/photo4.jpg";
 
-const photos = ref([
-  "/photos_carousel/photo1.jpg",
-  "/photos_carousel/photo2.jpg",
-  "/photos_carousel/photo3.jpg",
-  "/photos_carousel/photo4.jpg",
-]);
+const photos = ref([photo1, photo2, photo3, photo4]);
 
 const currentIndex = ref(0);
 let intervalId: ReturnType<typeof setInterval>;
@@ -25,7 +24,7 @@ onUnmounted(() => {
 
 <template>
   <section id="about" class="about-section">
-    <h3 class="section-title"><span class="number">01.</span> Qui suis-je ?</h3>
+    <h2 class="section-title"><span class="number">01.</span> Qui suis-je ?</h2>
 
     <div class="about-grid">
       <div class="about-text">

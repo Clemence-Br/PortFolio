@@ -1,9 +1,7 @@
 <template>
   <footer class="footer">
     <p class="copyright">© 2026 - Clémence Boucher - Portfolio</p>
-    <p class="tech-stack-info">
-      Conçu avec Vue 3 & TypeScript. Hébergé sur GitHub Pages.
-    </p>
+    <p class="tech-stack-info">Conçu avec Vue 3 & TypeScript.</p>
   </footer>
 </template>
 

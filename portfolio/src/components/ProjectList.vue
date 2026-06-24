@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <section id="projects" class="projects-section">
     <div class="section-header">
-      <h3 class="section-title-custom">Projets</h3>
+      <h2 class="section-title-custom">Projets</h2>
     </div>
     <div class="projects-grid">
       <project-card

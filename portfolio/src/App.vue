@@ -8,6 +8,12 @@ import TechStack from "./components/TechStack.vue";
 import ExperienceSection from "./components/ExperienceSection.vue";
 import ProjectList from "./components/ProjectList.vue";
 import Footer from "./components/Footer.vue";
+import straseventImage from "./assets/projects/strasevent.png";
+import onofImage from "./assets/projects/onof.png";
+import supervisionImage from "./assets/projects/supervision.png";
+import pookemonImage from "./assets/projects/pookemon.png";
+import snakeImage from "./assets/projects/snake.png";
+import labyrintheImage from "./assets/projects/labyrinthe.png";
 
 const projects = ref<Project[]>([
   {
@@ -15,7 +21,7 @@ const projects = ref<Project[]>([
     title: "StrasEvent (BUT3)",
     description:
       "Solution complète de gestion d'événements pour l'Eurométropole de Strasbourg, comprenant une application de bureau et son application mobile compagnon. Projet d'envergure mené en équipe de six, axé sur la synchronisation et l'expérience utilisateur.",
-    image: "/projects/strasevent.png",
+    image: straseventImage,
     technologies: [
       "React",
       "React Native",
@@ -33,7 +39,7 @@ const projects = ref<Project[]>([
     title: "O'nof (BUT2)",
     description:
       "Serious Game présentant les enjeux de la création de formations universitaires sous forme de jeu de cartes.",
-    image: "/projects/onof.png",
+    image: onofImage,
     technologies: ["React", "JavaScript"],
     githubUrl: "https://github.com/Clemence-Br/O-nof",
   },
@@ -42,7 +48,7 @@ const projects = ref<Project[]>([
     title: "Applications de Supervision (Freshmile)",
     description:
       "Participation au développement d'applications de supervision pour la gestion des bornes de recharge électriques et de leurs utilisateurs. J'ai notamment travaillé sur le système tarifaire des solutions.",
-    image: "/projects/supervision.png",
+    image: supervisionImage,
     technologies: ["Vue 2/3", "TypeScript", "Laravel 10"],
     githubUrl: "",
   },
@@ -51,7 +57,7 @@ const projects = ref<Project[]>([
     title: "Pookemon (BUT1)",
     description:
       "Jeu de cartes inspiré de Pokémon où un joueur humain fait face à l'ordinateur. Le gagnant est celui qui parvient à éliminer tous les Pokémons de son adversaire.",
-    image: "/projects/pookemon.png",
+    image: pookemonImage,
     technologies: ["Java", "UML"],
     githubUrl: "https://github.com/Clemence-Br/POOkemon",
   },
@@ -60,7 +66,7 @@ const projects = ref<Project[]>([
     title: "Snake (BUT1)",
     description:
       "Snake développé en assembleur MIPS32, où le joueur contrôle un serpent qui grandit à chaque fruit mangé. Le jeu se termine si le serpent se mord la queue ou touche les murs.",
-    image: "/projects/snake.png",
+    image: snakeImage,
     technologies: ["MIPS32"],
     githubUrl: "https://github.com/Clemence-Br/Snake",
   },
@@ -69,7 +75,7 @@ const projects = ref<Project[]>([
     title: "Labyrinthe (BUT2)",
     description:
       "Jeu du labyrinthe en 2d où les joueurs s'affrontent pour récupérer des trésors en se frayant un chemin à travers les tuiles mouvantes.",
-    image: "/projects/labyrinthe.png",
+    image: labyrintheImage,
     technologies: ["Java", "Swing", "UML"],
     githubUrl: "https://github.com/Clemence-Br/Labyrinthe",
   },

@@ -24,7 +24,7 @@ defineProps<{
         </span>
       </div>
 
-      <h4 class="card-title">{{ project.title }}</h4>
+      <h3 class="card-title">{{ project.title }}</h3>
       <p class="card-description">{{ project.description }}</p>
 
       <a

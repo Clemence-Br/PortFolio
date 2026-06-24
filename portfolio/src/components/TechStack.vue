@@ -62,7 +62,7 @@ const skillCategories = ref([
 
 <template>
   <div class="tech-stack-section">
-    <h3 class="tech-main-title"><span class="number">02.</span> Stack</h3>
+    <h2 class="tech-main-title"><span class="number">02.</span> Stack</h2>
     <p class="tech-description">
       Voici les technologies avec lesquelles je travaille au quotidien et/ou que
       j'ai acquises, tant par mon cursus à l'IUT que par mon expérience en
@@ -71,11 +71,11 @@ const skillCategories = ref([
 
     <div class="categories-container">
       <div
-        v-for="(category, index) in skillCategories"
+        v-for="category in skillCategories"
         :key="category.name"
         class="tech-category"
       >
-        <h4 class="category-name">{{ category.name }}</h4>
+        <h3 class="category-name">{{ category.name }}</h3>
 
         <div class="marquee-wrapper">
           <div class="marquee-content">

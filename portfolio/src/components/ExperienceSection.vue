@@ -54,30 +54,37 @@ const experiences = ref([
 
 <template>
   <section id="experience" class="experience-section">
-    <h3 class="section-title"><span class="number">03.</span> Mon Parcours</h3>
+    <h2 class="section-title"><span class="number">03.</span> Mon Parcours</h2>
     <p class="section-description">
       De mes bases universitaires à mon projet de spécialisation en ingénierie,
       voici la trajectoire de mon évolution professionnelle.
     </p>
 
-    <div class="timeline">
+    <div class="roadmap">
+      <div class="roadmap-line"></div>
+
       <div
         v-for="(item, index) in experiences"
         :key="index"
-        class="timeline-item"
-        :class="{ 'future-item': item.isFuture }"
+        class="roadmap-item"
+        :class="[
+          index % 2 === 0 ? 'left-side' : 'right-side',
+          { 'future-item': item.isFuture },
+        ]"
       >
-        <div class="timeline-marker"></div>
+        <div class="roadmap-marker">
+          <div class="marker-pulse"></div>
+          <div class="marker-core"></div>
+        </div>
 
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <span class="timeline-year">{{ item.year }}</span>
+        <div class="roadmap-content">
+          <div class="roadmap-header">
+            <span class="roadmap-year">{{ item.year }}</span>
 
-            <div class="timeline-icon" v-if="item.type === 'work'">
+            <div class="roadmap-icon" v-if="item.type === 'work'">
               <img :src="workIcon" alt="Work Icon" width="16" height="16" />
             </div>
-
-            <div class="timeline-icon" v-if="item.type === 'education'">
+            <div class="roadmap-icon" v-if="item.type === 'education'">
               <img
                 :src="educationIcon"
                 alt="Education Icon"
@@ -87,13 +94,13 @@ const experiences = ref([
             </div>
           </div>
 
-          <h4 class="timeline-title">{{ item.title }}</h4>
-          <p class="timeline-subtitle" v-if="item.subtitle">
+          <h3 class="roadmap-title">{{ item.title }}</h3>
+          <p class="roadmap-subtitle" v-if="item.subtitle">
             {{ item.subtitle }}
           </p>
 
-          <div class="timeline-place" v-if="item.place">
-            <img :src="pinIcon" alt="Pin Icon" width="14" height="14" />
+          <div class="roadmap-place" v-if="item.place">
+            <img :src="pinIcon" alt="Location Icon" width="16" height="16" />
             {{ item.place }}
           </div>
         </div>
@@ -104,7 +111,7 @@ const experiences = ref([
 
 <style scoped>
 .experience-section {
-  padding: 4rem 0;
+  padding: 6rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -129,143 +136,270 @@ const experiences = ref([
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.7;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   max-width: 600px;
 }
 
-.timeline {
+.roadmap {
   position: relative;
-  max-width: 800px;
-  margin: 0;
-  padding-left: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.timeline::before {
-  content: "";
+.roadmap-line {
   position: absolute;
+  left: 50%;
   top: 0;
   bottom: 0;
-  left: 7px;
   width: 2px;
   background: linear-gradient(
     to bottom,
-    var(--primary-color) 0%,
-    rgba(180, 144, 255, 0.1) 90%,
+    transparent 0%,
+    var(--primary-color) 10%,
+    rgba(180, 144, 255, 0.2) 90%,
     transparent 100%
   );
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
-.timeline-item {
+.roadmap-item {
+  display: flex;
   position: relative;
-  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  pointer-events: none;
 }
 
-.timeline-item:last-child {
-  padding-bottom: 0;
+.roadmap-item.right-side {
+  justify-content: flex-end;
+  padding-left: 50%;
 }
 
-.timeline-marker {
+.roadmap-item.left-side {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.roadmap-marker {
   position: absolute;
-  top: 0.25rem;
-  left: -2.5rem;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid var(--primary-color);
-  background: var(--bg-color);
-  transition: all 0.3s ease;
-  z-index: 2;
+  left: 50%;
+  top: 2rem;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  pointer-events: auto;
 }
 
-.timeline-content {
+.marker-core {
+  width: 12px;
+  height: 12px;
+  background: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.marker-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 2.5s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.roadmap-content {
+  width: 88%;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+  border-radius: 16px;
+  padding: 1.8rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
-.timeline-header {
+.roadmap-content::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: border-color 0.4s ease;
+}
+
+.right-side .roadmap-content::before {
+  left: -12px;
+  border-width: 10px 12px 10px 0;
+  border-color: transparent rgba(255, 255, 255, 0.05) transparent transparent;
+}
+
+.left-side .roadmap-content::before {
+  right: -12px;
+  border-width: 10px 0 10px 12px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.05);
+}
+
+.roadmap-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.timeline-year {
+.roadmap-year {
   font-family: var(--font-mono);
   font-size: 0.9rem;
   color: var(--primary-color);
   font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-.timeline-icon {
+.roadmap-icon {
   color: var(--text-muted);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-.timeline-title {
+.roadmap-title {
   color: var(--text-color);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
-.timeline-subtitle {
+.roadmap-subtitle {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.timeline-place {
+.roadmap-place {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--secondary-color);
   background: rgba(56, 189, 248, 0.08);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
 }
 
-.timeline-item:hover .timeline-marker {
-  background-color: var(--primary-color);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
-  transform: scale(1.2);
-}
-
-.timeline-item:hover .timeline-content {
-  transform: translateX(5px);
-  border-color: rgba(139, 92, 246, 0.3);
+.roadmap-item:hover .roadmap-content {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.4);
   background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 15px 30px -10px rgba(139, 92, 246, 0.15);
 }
 
-.future-item .timeline-marker {
+.roadmap-item:hover .marker-core {
+  transform: scale(1.5);
+  background-color: var(--primary-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.right-side:hover .roadmap-content::before {
+  border-color: transparent rgba(139, 92, 246, 0.4) transparent transparent;
+}
+.left-side:hover .roadmap-content::before {
+  border-color: transparent transparent transparent rgba(139, 92, 246, 0.4);
+}
+
+.future-item .roadmap-content {
+  border-style: dashed;
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.future-item .marker-core {
   border-color: var(--secondary-color);
-  border-style: dashed;
-  background: transparent;
 }
 
-.future-item .timeline-content {
-  border-style: dashed;
-  border-color: rgba(255, 255, 255, 0.1);
-  background: transparent;
+.future-item .marker-pulse {
+  background: var(--secondary-color);
 }
 
-.future-item .timeline-year {
+.future-item .roadmap-year {
   color: var(--secondary-color);
 }
 
-.future-item:hover .timeline-marker {
-  background-color: var(--secondary-color);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+.future-item:hover .roadmap-content {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 15px 30px -10px rgba(56, 189, 248, 0.15);
 }
 
-.future-item:hover .timeline-content {
-  border-color: rgba(56, 189, 248, 0.4);
+.future-item.right-side:hover .roadmap-content::before {
+  border-color: transparent rgba(56, 189, 248, 0.5) transparent transparent;
+}
+.future-item.left-side:hover .roadmap-content::before {
+  border-color: transparent transparent transparent rgba(56, 189, 248, 0.5);
+}
+
+.future-item:hover .marker-core {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .roadmap-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .roadmap-item.left-side,
+  .roadmap-item.right-side {
+    justify-content: flex-end;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+
+  .roadmap-content {
+    width: 100%;
+  }
+
+  .roadmap-marker {
+    left: 20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .roadmap-item.left-side .roadmap-content::before,
+  .roadmap-item.right-side .roadmap-content::before {
+    left: -12px;
+    right: auto;
+    border-width: 10px 12px 10px 0;
+    border-color: transparent rgba(255, 255, 255, 0.05) transparent transparent;
+  }
+
+  .roadmap-item.left-side:hover .roadmap-content::before,
+  .roadmap-item.right-side:hover .roadmap-content::before {
+    border-color: transparent rgba(139, 92, 246, 0.4) transparent transparent;
+  }
+
+  .future-item.left-side:hover .roadmap-content::before,
+  .future-item.right-side:hover .roadmap-content::before {
+    border-color: transparent rgba(56, 189, 248, 0.5) transparent transparent;
+  }
 }
 </style>
