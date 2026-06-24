@@ -13,9 +13,13 @@ import CV from "../assets/CV_Clemence_Boucher.pdf";
       </h1>
       <p class="intro-desc">
         En fin de cursus BUT Informatique et actuellement développeuse Web en
-        alternance. J'apprécie particulièrement la recherche de solutions,
-        j'aime analyser un besoin, comprendre ce qui pourrait bloquer et trouver
-        une manière simple et efficace d'y répondre à travers une application.
+        alternance, j'aime avant tout comprendre les besoins et relever les
+        défis techniques qui en découlent. J'apprécie particulièrement la
+        recherche de solutions : analyser une problématique, identifier ce qui
+        pourrait freiner son aboutissement et trouver une réponse simple,
+        efficace et pertinente à travers une application. Cette démarche
+        d'analyse et de conception est ce qui me plaît le plus dans le
+        développement.
       </p>
       <div class="cta-group">
         <a href="#projects" class="cta-button">Découvrir mes projets</a>
