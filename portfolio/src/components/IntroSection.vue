@@ -1,19 +1,32 @@
+<script setup lang="ts">
+import profileImage from "/CLEMENCE_B.png";
+</script>
+
 <template>
   <section id="intro" class="intro">
-    <p class="intro-label">Bonjour, je suis Clémence Boucher</p>
-    <h1 class="main-title">
-      Développeuse <br />
-      <span class="accent-text">Logiciel.</span>
-    </h1>
-    <p class="intro-desc">
-      En fin de cursus BUT Informatique et actuellement développeuse Web en
-      alternance. J'apprécie particulièrement la recherche de solutions, j'aime
-      analyser un besoin, comprendre ce qui pourrait bloquer et trouver une
-      manière simple et efficace d'y répondre à travers une application.
-    </p>
-    <div class="cta-group">
-      <a href="#projects" class="cta-button">Découvrir mes projets</a>
-      <a href="#about" class="secondary-button">En savoir plus &rarr;</a>
+    <div class="intro-content">
+      <p class="intro-label">Bonjour, je suis Clémence Boucher</p>
+      <h1 class="main-title">
+        Développeuse <br />
+        <span class="accent-text">Logiciel.</span>
+      </h1>
+      <p class="intro-desc">
+        En fin de cursus BUT Informatique et actuellement développeuse Web en
+        alternance. J'apprécie particulièrement la recherche de solutions,
+        j'aime analyser un besoin, comprendre ce qui pourrait bloquer et trouver
+        une manière simple et efficace d'y répondre à travers une application.
+      </p>
+      <div class="cta-group">
+        <a href="#projects" class="cta-button">Découvrir mes projets</a>
+        <a href="#about" class="secondary-button">En savoir plus &rarr;</a>
+      </div>
+    </div>
+
+    <div class="intro-photo">
+      <div class="photo-wrapper">
+        <img :src="profileImage" alt="Clémence Boucher" class="profile-img" />
+        <div class="photo-glow"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -21,12 +34,18 @@
 <style scoped>
 .intro {
   min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 4rem;
   padding-top: 8rem;
   padding-bottom: 4rem;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .intro-label {
@@ -114,5 +133,95 @@
   background-color: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.intro-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(32, 28, 56, 0.5),
+    rgba(13, 16, 36, 0.5)
+  );
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.photo-wrapper:hover {
+  border-color: rgba(180, 144, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+.profile-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  filter: grayscale(15%) contrast(105%);
+  transition:
+    filter 0.4s ease,
+    transform 0.6s ease;
+}
+
+.photo-wrapper:hover .profile-img {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.03);
+}
+
+.photo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  opacity: 0.2;
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+    padding-top: 6rem;
+  }
+
+  .intro-content {
+    align-items: center;
+  }
+
+  .intro-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-group {
+    justify-content: center;
+  }
+
+  .photo-wrapper {
+    max-width: 280px;
+  }
 }
 </style>
