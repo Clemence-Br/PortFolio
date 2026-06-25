@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import profileImage from "../assets/CLEMENCE_B.png";
 import CV from "../assets/CV_Clemence_Boucher.pdf";
+import linkedinIcon from "../assets/icons/linkedin.svg";
 </script>
 
 <template>
@@ -23,13 +24,16 @@ import CV from "../assets/CV_Clemence_Boucher.pdf";
       </p>
       <div class="cta-group">
         <a href="#projects" class="cta-button">Voir mes projets</a>
+        <a :href="CV" class="secondary-button" target="_blank">Mon CV &rarr;</a>
         <a
-          :href="CV"
-          class="secondary-button"
+          href="https://www.linkedin.com/in/cl%C3%A9mence-boucher-4a4631350/"
           target="_blank"
           rel="noopener noreferrer"
-          >Mon CV &rarr;</a
+          class="secondary-button"
         >
+          <img :src="linkedinIcon" alt="LinkedIn icon" class="linkedin-icon" />
+          LinkedIn
+        </a>
       </div>
     </div>
 
@@ -144,6 +148,12 @@ import CV from "../assets/CV_Clemence_Boucher.pdf";
   background-color: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.linkedin-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .intro-photo {
